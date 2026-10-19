@@ -1,4 +1,4 @@
-README.md — Copy All of This
+README.md
 markdown
 # 🏥 Hospital Management System
 
