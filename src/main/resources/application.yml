@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: hospital-management
+  
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/hospital_db}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    open-in-view: false
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    com.hospital.management: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+jwt:
+  secret: ${JWT_SECRET:your-256-bit-secret-key-for-jwt-authentication-here}
+  expiration: 86400000
+  refresh-expiration: 604800000
