@@ -1,4 +1,4 @@
-README.md
+README.md — Copy All of This
 markdown
 # 🏥 Hospital Management System
 
@@ -30,6 +30,7 @@ A full-stack hospital management platform for managing patients, doctors, appoin
 
 ### Backend
 
+```bash
 psql -U postgres -c "CREATE DATABASE hospital_db;"
 mvn spring-boot:run
 Backend: http://localhost:8080/api
